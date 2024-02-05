@@ -7,7 +7,7 @@ const hashCmdHandler = async (cmd, context) => {
   const args = cmd.trim().split(" ");
 
   if (args.length < 2) {
-    console.error("Please provide file path.");
+    console.error("Invalid input. Please provide file path.");
     return;
   }
 
@@ -28,7 +28,7 @@ const hashCmdHandler = async (cmd, context) => {
 
     console.log(`\n SHA256 sum for ${filePath} is ${hash.digest("hex")}`);
   } catch (error) {
-    console.error(`Error: ${error.message}`);
+    console.error(`Operation failed. ${error.message}`);
   }
 };
 

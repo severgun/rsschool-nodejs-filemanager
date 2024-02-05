@@ -6,7 +6,7 @@ import osCmdHandler from "./osCmdHandler.js";
 const commandHandler = async (cmd, context, file, cb) => {
   const trimmedCmd = cmd.trimStart();
 
-  const cmdNotFoundMsg = `Command ${trimmedCmd.trimEnd()} not found`;
+  const cmdNotFoundMsg = `Invalid input. Command ${trimmedCmd.trimEnd()} not found.`;
 
   switch (true) {
     case /^up\s+/.test(trimmedCmd):

@@ -45,7 +45,7 @@ const osCmdHandler = (cmd) => {
   }
 
   console.log(
-    "Command 'os' requires additional params.\nAvailable params: --EOL, --cpus, --homedir, --username, --architecture."
+    "Invalid input. Command 'os' requires additional params.\nAvailable params: --EOL, --cpus, --homedir, --username, --architecture."
   );
   return;
 };
