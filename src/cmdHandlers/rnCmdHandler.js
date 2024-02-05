@@ -1,5 +1,5 @@
 import fs from "fs/promises";
-import { parseSrcDestPath } from "./parsePath.js";
+import { parseSrcDestPath } from "../utils/parsePath.js";
 
 const rnCmdHandler = async (cmd, context) => {
   try {

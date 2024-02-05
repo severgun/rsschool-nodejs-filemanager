@@ -1,6 +1,6 @@
 import repl from "repl";
 import os from "os";
-import getUserName from "./getUserName.js";
+import getUserName from "./utils/getUserName.js";
 import commandHandler from "./commandHandler.js";
 
 const main = () => {

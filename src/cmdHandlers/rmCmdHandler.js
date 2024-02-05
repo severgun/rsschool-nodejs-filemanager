@@ -1,5 +1,5 @@
 import { rm } from "fs/promises";
-import { parsePath } from "./parsePath.js";
+import { parsePath } from "../utils/parsePath.js";
 
 const rmCmdHandler = async (cmd, context) => {
   try {

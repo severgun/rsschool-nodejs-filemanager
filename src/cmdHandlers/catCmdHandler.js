@@ -1,4 +1,4 @@
-import { parsePath } from "./parsePath.js";
+import { parsePath } from "../utils/parsePath.js";
 import { createReadStream, createWriteStream } from "fs";
 
 const catCmdHandler = async (cmd, context) => {

@@ -1,7 +1,7 @@
 import { createHash } from "crypto";
 import { createReadStream } from "fs";
 import fs from "fs/promises";
-import { parsePath } from "./parsePath.js";
+import { parsePath } from "../utils/parsePath.js";
 
 const hashCmdHandler = async (cmd, context) => {
   try {

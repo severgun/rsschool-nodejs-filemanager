@@ -1,7 +1,7 @@
 import { createReadStream, createWriteStream } from "fs";
 import { rm } from "fs/promises";
 import { pipeline } from "stream/promises";
-import { parseSrcDestPath } from "./parsePath.js";
+import { parseSrcDestPath } from "../utils/parsePath.js";
 
 const mvCmdHandler = async (cmd, context) => {
   try {

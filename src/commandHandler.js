@@ -1,18 +1,18 @@
 import path from "path";
-import hashCmdHandler from "./hashCmdHandler.js";
-import lsCmdHandler from "./lsCmdHandler.js";
-import osCmdHandler from "./osCmdHandler.js";
-import cdCmdHandler from "./cdCmdHandler.js";
-import addCmdHandler from "./addCmdHandler.js";
-import cpCmdHandler from "./cpCmdHandler.js";
-import rnCmdHandler from "./rnCmdHandler.js";
-import mvCmdHandler from "./mvCmdHandler.js";
-import rmCmdHandler from "./rmCmdHandler.js";
+import hashCmdHandler from "./cmdHandlers/hashCmdHandler.js";
+import lsCmdHandler from "./cmdHandlers/lsCmdHandler.js";
+import osCmdHandler from "./cmdHandlers/osCmdHandler.js";
+import cdCmdHandler from "./cmdHandlers/cdCmdHandler.js";
+import addCmdHandler from "./cmdHandlers/addCmdHandler.js";
+import cpCmdHandler from "./cmdHandlers/cpCmdHandler.js";
+import rnCmdHandler from "./cmdHandlers/rnCmdHandler.js";
+import mvCmdHandler from "./cmdHandlers/mvCmdHandler.js";
+import rmCmdHandler from "./cmdHandlers/rmCmdHandler.js";
 import {
   compressCmdHandler,
   decompressCmdHandler,
-} from "./compressCmdHandler.js";
-import catCmdHandler from "./catCmdHandler.js";
+} from "./cmdHandlers/compressCmdHandler.js";
+import catCmdHandler from "./cmdHandlers/catCmdHandler.js";
 
 const commandHandler = async (cmd, context, file, cb) => {
   const trimmedCmd = cmd.trimStart();

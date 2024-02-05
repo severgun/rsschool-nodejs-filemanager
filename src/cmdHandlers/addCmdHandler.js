@@ -1,5 +1,5 @@
 import fs from "fs/promises";
-import { parsePath } from "./parsePath.js";
+import { parsePath } from "../utils/parsePath.js";
 
 const addCmdHandler = async (cmd, context) => {
   try {

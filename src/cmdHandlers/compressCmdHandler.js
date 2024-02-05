@@ -2,7 +2,7 @@ import path from "path";
 import fs from "fs/promises";
 import { createReadStream, createWriteStream } from "fs";
 import { createBrotliCompress, createBrotliDecompress } from "zlib";
-import { parseSrcDestPath } from "./parsePath.js";
+import { parseSrcDestPath } from "../utils/parsePath.js";
 
 const compressCmdHandler = async (cmd, context) => {
   try {
