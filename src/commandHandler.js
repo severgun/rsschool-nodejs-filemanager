@@ -8,6 +8,7 @@ import {
   compressCmdHandler,
   decompressCmdHandler,
 } from "./compressCmdHandler.js";
+import catCmdHandler from "./catCmdHandler.js";
 
 const commandHandler = async (cmd, context, file, cb) => {
   const trimmedCmd = cmd.trimStart();
@@ -25,6 +26,10 @@ const commandHandler = async (cmd, context, file, cb) => {
 
     case /^add\s+/.test(trimmedCmd):
       await addCmdHandler(trimmedCmd, context);
+      break;
+
+    case /^cat\s+/.test(trimmedCmd):
+      await catCmdHandler(trimmedCmd, context);
       break;
 
     case /^os\s+/.test(trimmedCmd):
