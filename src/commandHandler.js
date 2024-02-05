@@ -1,6 +1,7 @@
+import hashCmdHandler from "./hashCmdHandler.js";
 import osCmdHandler from "./osCmdHandler.js";
 
-const commandHandler = (cmd, context, file, cb) => {
+const commandHandler = async (cmd, context, file, cb) => {
   const trimmedCmd = cmd.trimStart();
 
   const cmdNotFoundMsg = `Command ${trimmedCmd.trimEnd()} not found`;
@@ -8,6 +9,10 @@ const commandHandler = (cmd, context, file, cb) => {
   switch (true) {
     case /^os\s+/.test(trimmedCmd):
       osCmdHandler(trimmedCmd);
+      break;
+
+    case /^hash\s+/.test(trimmedCmd):
+      await hashCmdHandler(trimmedCmd, context);
       break;
 
     default:
