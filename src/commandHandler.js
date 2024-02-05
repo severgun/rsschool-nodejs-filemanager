@@ -2,6 +2,7 @@ import path from "path";
 import hashCmdHandler from "./hashCmdHandler.js";
 import lsCmdHandler from "./lsCmdHandler.js";
 import osCmdHandler from "./osCmdHandler.js";
+import cdCmdHandler from "./cdCmdHandler.js";
 
 const commandHandler = async (cmd, context, file, cb) => {
   const trimmedCmd = cmd.trimStart();
@@ -23,6 +24,10 @@ const commandHandler = async (cmd, context, file, cb) => {
 
     case /^hash\s+/.test(trimmedCmd):
       await hashCmdHandler(trimmedCmd, context);
+      break;
+
+    case /^cd\s+/.test(trimmedCmd):
+      await cdCmdHandler(trimmedCmd, context);
       break;
 
     default:
