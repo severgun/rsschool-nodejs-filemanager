@@ -1,5 +1,6 @@
 import hashCmdHandler from "./hashCmdHandler.js";
 import osCmdHandler from "./osCmdHandler.js";
+import path from "path";
 
 const commandHandler = async (cmd, context, file, cb) => {
   const trimmedCmd = cmd.trimStart();
@@ -7,6 +8,10 @@ const commandHandler = async (cmd, context, file, cb) => {
   const cmdNotFoundMsg = `Command ${trimmedCmd.trimEnd()} not found`;
 
   switch (true) {
+    case /^up\s+/.test(trimmedCmd):
+      context.cwd = path.dirname(context.cwd);
+      break;
+
     case /^os\s+/.test(trimmedCmd):
       osCmdHandler(trimmedCmd);
       break;
