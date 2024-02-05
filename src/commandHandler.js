@@ -1,6 +1,7 @@
-import hashCmdHandler from "./hashCmdHandler.js";
-import osCmdHandler from "./osCmdHandler.js";
 import path from "path";
+import hashCmdHandler from "./hashCmdHandler.js";
+import lsCmdHandler from "./lsCmdHandler.js";
+import osCmdHandler from "./osCmdHandler.js";
 
 const commandHandler = async (cmd, context, file, cb) => {
   const trimmedCmd = cmd.trimStart();
@@ -10,6 +11,10 @@ const commandHandler = async (cmd, context, file, cb) => {
   switch (true) {
     case /^up\s+/.test(trimmedCmd):
       context.cwd = path.dirname(context.cwd);
+      break;
+
+    case /^ls\s+/.test(trimmedCmd):
+      await lsCmdHandler(trimmedCmd, context);
       break;
 
     case /^os\s+/.test(trimmedCmd):
