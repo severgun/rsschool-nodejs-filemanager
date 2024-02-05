@@ -5,6 +5,7 @@ import osCmdHandler from "./osCmdHandler.js";
 import cdCmdHandler from "./cdCmdHandler.js";
 import addCmdHandler from "./addCmdHandler.js";
 import cpCmdHandler from "./cpCmdHandler.js";
+import rnCmdHandler from "./rnCmdHandler.js";
 import mvCmdHandler from "./mvCmdHandler.js";
 import {
   compressCmdHandler,
@@ -32,6 +33,10 @@ const commandHandler = async (cmd, context, file, cb) => {
 
     case /^cat\s+/.test(trimmedCmd):
       await catCmdHandler(trimmedCmd, context);
+      break;
+
+    case /^rn\s+/.test(trimmedCmd):
+      await rnCmdHandler(trimmedCmd, context);
       break;
 
     case /^cp\s+/.test(trimmedCmd):
