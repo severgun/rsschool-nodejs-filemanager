@@ -14,14 +14,35 @@ const lsCmdHandler = async (cmd, context) => {
         return 0;
       }
     );
+
+    let padEndIndex = dirContent.length.toString().length;
+    padEndIndex =
+      padEndIndex > "Index".length ? padEndIndex + 2 : "Index".length + 2;
+    const padEndName =
+      dirContent.reduce(
+        (acc, curr) => (acc.name.length > curr.name.length ? acc : curr),
+        {
+          name: "",
+        }
+      ).name.length + 2;
+
+    // prettier-ignore
+    const header = `|  ${'Index'.padEnd(padEndIndex)}|  ${'Name'.padEnd(padEndName)}|  ${'Type'.padEnd(11)}|`;
+    const divider = "-".repeat(header.length);
+
+    console.log(divider);
+    console.log(header);
+    console.log(divider);
+
     dirContent.forEach((entry, index) => {
       const type = entry.isDirectory() ? "directory" : "file";
-
-      // TODO: prettify output
-      console.log(`|\t${index}\t|\t${entry.name}\t\t|\t${type}\t|`);
+      // prettier-ignore
+      console.log(`|  ${index.toString().padEnd(padEndIndex)}|  ${entry.name.padEnd(padEndName)}|  ${type.padEnd(11)}|`);
     });
+
+    console.log(divider);
   } catch (err) {
-    console.error(err.message);
+    console.error(`Operation failed. ${err.message}`);
   }
 };
 
